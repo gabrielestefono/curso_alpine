@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aula 02 HTML</title>
+	<script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+	<div x-data="{ open:false }">
+		<button x-on:click="open=!open">Botão</button>
+		<h1 x-show="open">Texto</h1>
+		<p x-show="open">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ea, sequi officiis sit doloremque consectetur debitis et neque doloribus fugiat, ratione atque tempore? Esse error repellat dolor temporibus dolorem rem.</p>
+	</div>
+</body>
+</html>
