@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+	<section x-data="{search: '',
+					result: {},
+					doSearch(){
+						fetch('https://dummyjson.com/products/search?q='+this.search)
+						.then(res => res.json())
+						.then(json=>this.result=json);
+					}
+				}">
+		<input type="search" x-model="search">
+		<button x-on:click="doSearch">Pesquisar</button>
+		<p style="color: red;" x-show="result.products?.length==0">
+			A pesquisa não encontrou nenhum resultado
+		</p>
+		<div x-show="result.products?.length>0">
+			<h2 x-text="result.products[0].title"></h2>
+			<p x-text="result.products[0].description"></p>
+			<p><span>Marca: </span><span x-text="result.products[0].brand"></span></p>
+		</div>
+	</section>
+</body>
+</html>
