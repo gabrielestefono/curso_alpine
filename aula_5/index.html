@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+	<!-- <form x-data="{terms: false}">
+		<input type="checkbox" x-model="terms">
+		<input type="checkbox" x-model="terms">
+		<input type="checkbox" x-model="terms">
+		<button type="submit">Enviar</button>
+		<span x-text="terms"></span>
+	</form> -->
+	<!-- <form x-data="{posts: [],submit(e){console.log(this.posts)}}" style="display: flex; flex-direction: column; align-items: flex-start;" x-on:submit.prevent="">
+		<input type="checkbox" x-model="posts" value="1">
+		<input type="checkbox" x-model="posts" value="2">
+		<input type="checkbox" x-model="posts" value="3">
+		<button type="submit" x-on:click.prevent="submit()">Deletar</button>
+		<button type="submit">Deletar</button>
+		<span x-text="posts"></span>
+	</form> -->
+	<!-- <div x-data="{plan: 'mensal'}">
+		<select x-model="plan">
+			<option value="">Selecione</option>
+			<option value="mensal">Mensal</option>
+			<option value="anual">Anual</option>
+		</select>
+		<span x-text="plan"></span>
+	</div> -->
+	<form x-data="{plan: 'mensal'}" style="display: flex; flex-direction: column;">
+		<div>
+			<input type="radio" x-model="plan" value="mensal">Mensal
+			<input type="radio" x-model="plan" value="anual">Anual
+		</div>
+		<span x-text="plan"></span>
+	</form>
+</body>
+</html>
