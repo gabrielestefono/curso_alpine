@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<style>
+		.red{
+			color: red;
+		}
+
+		.bold{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div x-data="{
+		error: false
+	}">
+		<span x-bind:class="{'red': error}" class="bold">teste</span>
+		<button x-on:click="error=!error">Mudar cor</button>
+	</div> -->
+	<div x-data="{imagem: 'https://fakeimg.pl/600x400', texto_input: 'Imagem'}" style="display: flex; flex-direction: column; align-items: flex-start;">
+		<input type="text" x-model="imagem" x-bind:placeholder="texto_input">
+		<img x-bind:src="imagem" alt="Alguma coisa">
+		<button x-on:click="imagem='https://fakeimg.pl/400x600'">Alterar imagem</button>
+	</div>
+</body>
+</html>
